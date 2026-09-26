@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+filebrowser:
+image: filebrowser/filebrowser:v2.30.0
+container_name: file-manager
+restart: always
+ports: - "8080:80"
+volumes: - /var/www/projects:/srv - /var/www/filebrowser.db:/database/filebrowser.db

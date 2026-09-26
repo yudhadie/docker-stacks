@@ -1,0 +1,11 @@
+services:
+  html-app:
+    image: nginx:alpine
+    container_name: html-app
+    restart: unless-stopped
+
+    ports:
+      - "8002:80"
+
+    volumes:
+      - /www/projects/html-app:/usr/share/nginx/html:ro
