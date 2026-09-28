@@ -1,0 +1,19 @@
+version: "3.8"
+
+services:
+  tinyfilemanager:
+    image: tinyfilemanager/tinyfilemanager:master
+    container_name: tiny-file-manager
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    volumes:
+      - /var/www/projects:/var/www/html/data
+    environment:
+      TZ: "Asia/Jakarta"
+    networks:
+      - web-network
+
+networks:
+  web-network:
+    external: true

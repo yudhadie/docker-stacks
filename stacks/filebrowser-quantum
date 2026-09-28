@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  filebrowser:
+    image: gtstef/filebrowser:stable
+    container_name: file-manager
+    restart: always
+    ports:
+      - "8080:80"
+    volumes:
+      - /var/www/projects:/srv
+      - /var/www/filebrowser.db:/database/filebrowser.db
+    networks:
+      - web-network
+
+networks:
+  web-network:
+    external: true
