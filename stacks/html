@@ -8,4 +8,4 @@ services:
       - "8002:80"
 
     volumes:
-      - /www/projects/html-app:/usr/share/nginx/html:ro
+      - /www/projects/html-app:/usr/share/nginx/html

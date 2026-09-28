@@ -1,27 +1,21 @@
 version: "3.8"
 
 services:
-  laravel:
+  laravel-test:
     image: serversideup/php:8.4-fpm-nginx
     container_name: laravel-app
     restart: unless-stopped
-
     ports:
       - "8000:8080"
-
     volumes:
-      - /var/www/projects/laravel-app:/var/www/html
-
+      - /var/www/projects/laravel-test:/var/www/html
     environment:
       PHP_DATE_TIMEZONE: "Asia/Jakarta"
       PHP_MEMORY_LIMIT: "512M"
       PHP_UPLOAD_MAX_FILE_SIZE: "100M"
       PHP_POST_MAX_SIZE: "100M"
-
-      # Untuk development
       PHP_OPCACHE_ENABLE: "0"
       AUTORUN_ENABLED: "false"
-
     networks:
       - web-network
 
